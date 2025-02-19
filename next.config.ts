@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['https://start-up-website-v5na.vercel.app/'], // Replace with your domain if needed
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
