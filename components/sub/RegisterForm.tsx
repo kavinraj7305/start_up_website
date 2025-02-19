@@ -1,4 +1,6 @@
-import { Button } from "@/components/ui/button"
+"use client";
+
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,53 +9,56 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "../ui/textarea"
-import { useMutation } from "convex/react"
-import { api } from "../../convex/_generated/api"
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea"; // ✅ Fixed import path
+import { useMutation } from "convex/react";
+import { api } from "../../convex/_generated/api";
 
 const RegisterForm = () => {
-  const register = useMutation(api.Registration.createRegistration);
+  const register = useMutation(api.Registration.createRegistration); // ✅ Ensure this exists in your Convex functions
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     const form = e.currentTarget;
     const formData = new FormData(form);
-  
+
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const idea = formData.get("idea") as string;
     const year = formData.get("year") as string;
-  
+
     if (!name || !email || !idea || !year) {
       alert("Please fill out all fields.");
       return;
     }
-  
+
     try {
+      // Submit data to Convex Database (if needed)
+      await register({ name, email, idea, year });
+
+      // Call Next.js API route for email
       const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, idea, year }),
       });
-  
+
       const result = await response.json();
       console.log("API Response:", result);
-  
+
       if (!response.ok) {
         throw new Error(result.message || "Failed to send email");
       }
-  
+
       alert("Email sent successfully!");
       form.reset();
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
-  
 
   return (
     <Dialog>
@@ -86,16 +91,23 @@ const RegisterForm = () => {
             <Label htmlFor="idea" className="text-right font-bold text-white">
               Idea
             </Label>
-            <Textarea name="idea" required className="col-span-3 text-white " placeholder="Type your message here." />
+            <Textarea
+              name="idea"
+              required
+              className="col-span-3 text-white"
+              placeholder="Type your message here."
+            />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="year" className="text-right font-bold text-white ">
+            <Label htmlFor="year" className="text-right font-bold text-white">
               Year
             </Label>
             <Input name="year" type="number" required className="col-span-3 text-white" />
           </div>
           <DialogFooter>
-            <Button className="bg-gradient-to-r from-purple-500 to-cyan-500" type="submit">Save changes</Button>
+            <Button className="bg-gradient-to-r from-purple-500 to-cyan-500" type="submit">
+              Save changes
+            </Button>
           </DialogFooter>
         </form>
       </DialogContent>

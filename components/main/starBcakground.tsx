@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useState, useCallback } from "react";
+import {  useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
@@ -10,7 +10,7 @@ interface FireParticlesProps {
   isHovered: boolean;
 }
 
-const FireParticles: React.FC<FireParticlesProps> = ({ isHovered }) => {
+const FireParticles: React.FC<FireParticlesProps> = ({ }) => {
 
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
