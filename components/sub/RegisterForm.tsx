@@ -53,7 +53,7 @@ const RegisterForm = () => {
         throw new Error(result.message || "Failed to send email");
       }
 
-      alert("Email sent successfully!");
+      
       form.reset();
     } catch (error) {
       console.error("Error submitting form:", error);
