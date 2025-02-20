@@ -49,7 +49,7 @@ const HeroContent = () => {
       className='w-full h-full flex justify-center items-center'
       >
         <img
-        src="/mainIconsDark.svg"
+        src="/mainIconsdark.svg"
         alt="work icons"
         height={650}
         width={650}
