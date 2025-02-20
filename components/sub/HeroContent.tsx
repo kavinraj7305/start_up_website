@@ -4,6 +4,7 @@ import {motion} from "framer-motion"
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motion'
 import {SparklesIcon } from '@heroicons/react/24/solid' 
 import RegisterForm from "@/components/sub/RegisterForm"
+import Image from 'next/image'
 
 const HeroContent = () => {
   return (
@@ -48,7 +49,7 @@ const HeroContent = () => {
       variants={slideInFromRight(0.8)}
       className='w-full h-full flex justify-center items-center'
       >
-        <img
+        <Image
         src="/mainIconsdark.svg"
         alt="work icons"
         height={650}
