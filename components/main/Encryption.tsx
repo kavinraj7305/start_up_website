@@ -367,9 +367,11 @@ const Encryption = () => {
           <Image
             src="/LockTop.png"
             alt="Lock top"
+
             width={50}
             height={50}
-            className="w-[50px] translate-y-5 transition-all duration-200 group-hover:translate-y-11"
+            className="w-[50px] sm:w-[40px] translate-y-5 transition-all duration-200 group-hover:translate-y-11 sm:group-hover:translate-y-6
+            "
           />
           <motion.button className="z-10" onClick={() => { generateTeamDetails_1(); setIsClicked(true);generateTeamDetails_2() ;generateTeamDetails_3(); generateTeamDetails_4();generateTeamDetails_5();generateTeamDetails_6()}}>
             <Image
@@ -377,7 +379,7 @@ const Encryption = () => {
               alt="Lock Main"
               width={70}
               height={70}
-              className="z-10"
+              className="z-10 sm:w-[50px]"
             />
           </motion.button>
         </div>
