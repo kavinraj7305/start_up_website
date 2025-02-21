@@ -37,7 +37,7 @@ const Navbar = () => {
           </span>
         </a>
 
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20 fixed top-0 right-80 -translate-x-11">
+        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20 fixed top-0 right-80 -translate-x-11 xs:hidden">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a href="#about-us" className="cursor-pointer">
               About Us            </a>
@@ -50,7 +50,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* chatbot*/ }
-        <div className="translate-x-96">
+        <div className="">
   <Drawer.Root direction="right">
     <Drawer.Trigger className="relative flex h-10 flex-shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/20 backdrop-blur-xl text-white px-8 font-medium shadow-sm transition-all z-30 text-xl">
       ChatBot
@@ -58,10 +58,10 @@ const Navbar = () => {
     <Drawer.Portal>
       <Drawer.Overlay className="fixed inset-0 " />
       <Drawer.Content
-        className="right-2 top-2 bottom-2 fixed z-[9999] outline-none w-[500px] flex"
+        className="right-2 top-2 bottom-2 fixed z-[9999] outline-none w-[500px] xs:w-[350px] flex"
         style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}
       >
-        <div className="bg-white/30 backdrop-blur-lg h-full w-full grow p-5 flex flex-col rounded-[16px]">
+        <div className="bg-white/30 backdrop-blur-lg h-full w-full grow p-5 flex flex-col rounded-[16px] ">
           <div className="max-w-md mx-auto">
             <Drawer.Title className="font-medium mb-2 text-zinc-900">
               Your AI Co-founder for startup Success!
@@ -75,10 +75,10 @@ const Navbar = () => {
                       key={m.id}
                       ref={index === messages.length - 1 ? lastMessageRef : null}
                       className={`p-2 my-2 rounded-lg ${
-                        m.role === 'user' ? 'bg-transparent border border-white text-right text-[#b4fed8]' : 'bg-transparent border border-white text-left text-purple-200'
+                        m.role === 'user' ? 'bg-transparent border border-white text-right text-[#b4fed8] xs:text-2xs' : 'bg-transparent border border-white text-left text-purple-200 xs:text-2xs'
                       }`}
                     >
-                      <span className="font-bold text-lime-20 text-xl">
+                      <span className="font-bold text-lime-20 text-xl xs:text-sm">
                         {m.role === 'user' ? 'User: ' : 'AI: '}
                       </span>
                       {m.content}
@@ -112,17 +112,6 @@ const Navbar = () => {
   </Drawer.Root>
 </div>
 
-        <div className="flex flex-row gap-5">
-          {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
-              key={social.name}
-              width={24}
-              height={24}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );

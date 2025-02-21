@@ -33,6 +33,7 @@ const SkillDataProvider = ({ src, width, height, index} : Props) => {
   transition={{delay: index * animationDelay}}
   >
     <Image
+    
 src={src}
 width={width}
 height={height}

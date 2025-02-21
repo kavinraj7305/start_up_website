@@ -57,7 +57,8 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
 		fontSize:{
-			'xs':'0.2rem'
+			'xs':'0.2rem',
+			'2xs':'0.8rem'
 		},
 		screens:{
 			'xs':'200px'

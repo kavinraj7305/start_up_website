@@ -36,7 +36,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="Projects" className="py-16 container mx-auto min-h-[300vh]">
+    <section id="Projects" className="py-16  mx-auto min-h-[300vh] xs:min-h-[100vh]">
       {projects.map((project,index) => (
         <motion.div
           key={project.id}
