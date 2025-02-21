@@ -60,7 +60,7 @@ export default {
 			'xs':'0.2rem'
 		},
 		screens:{
-			'xs':'480px'
+			'xs':'200px'
 		}
   	}
   },
