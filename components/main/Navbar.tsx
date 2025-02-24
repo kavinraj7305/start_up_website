@@ -17,7 +17,7 @@ const Navbar = () => {
     lastMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10 ">
+    <div className="w-full h-[65px] fixed top-0 left-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10 ">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <a
           href="#about-me"
@@ -52,7 +52,7 @@ const Navbar = () => {
         {/* chatbot*/ }
         <div className="">
   <Drawer.Root direction="right">
-    <Drawer.Trigger className="relative flex h-10 flex-shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/20 backdrop-blur-xl text-white px-8 font-medium shadow-sm transition-all z-30 text-xl">
+    <Drawer.Trigger className="relative flex h-10 flex-shrink-0 items-center justify-between gap-2 overflow-hidden rounded-full bg-white/20 backdrop-blur-xl text-white px-8 font-medium shadow-sm transition-all z-30 text-xl ">
       ChatBot
     </Drawer.Trigger>
     <Drawer.Portal>
