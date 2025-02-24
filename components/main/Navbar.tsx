@@ -1,5 +1,4 @@
 "use client"
-import { Socials } from "@/constants";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { Drawer } from 'vaul';
@@ -18,7 +17,7 @@ const Navbar = () => {
     lastMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10 ">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <a
           href="#about-me"
@@ -32,19 +31,20 @@ const Navbar = () => {
             className="cursor-pointer hover:animate-slowspin"
           />
 
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300 ">
+          <span className="font-bold ml-[10px] hidden md:block text-gray-300  ">
             RIT
           </span>
         </a>
 
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20 fixed top-0 right-80 -translate-x-11 xs:hidden">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <a href="#about-us" className="cursor-pointer">
+        <div className="xl:w-[500px] h-full flex flex-row items-center justify-between md:mr-20 fixed top-0 right-80 -translate-x-11 xs:hidden sm:flex sm:translate-x-28 sm:w-[300px] xl:-translate-x-20 lg:translate-x-14 lg:w-[420px]
+        ">
+          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 lg:mr-[20px]">
+            <a href="#about-us" className="cursor-pointer sm:text-sm xl:text-xl lg:text-xl">
               About Us            </a>
-            <a href="#skills" className="cursor-pointer">
+            <a href="#skills" className="cursor-pointer xl:text-2xl sm:text-sm lg:text-2xl">
               Skills
             </a>
-            <a href="#Projects" className="cursor-pointer">
+            <a href="#Projects" className="cursor-pointer xl:text-xl sm:text-sm lg:text-xl">
               Projects
             </a>
           </div>

@@ -43,7 +43,7 @@ interface ParallaxProps {
     });
   
     return (
-      <div className="overflow-hidden whitespace-nowrap flex items-center relative w-full text-4xl font-bold uppercase  ">
+      <div className="overflow-hidden whitespace-nowrap flex items-center relative w-full text-4xl font-bold uppercase h-[400px] ">
         <motion.div className="flex space-x-10" style={{ x }}>
           {[...Array(10)].map((_, i) => (
             <span key={i} className="px-4 bg-gradient-to-r from-purple-500 to-cyan-500">{children}</span>

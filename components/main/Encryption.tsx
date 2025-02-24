@@ -350,7 +350,7 @@ const Encryption = () => {
   
 
   return (
-    <div ref={scope} className="flex flex-row relative items-center justify-center min-h-screen w-full h-full xs:hidden">
+    <div ref={scope} className="flex flex-row relative items-center justify-center min-h-screen w-full h-full ">
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}

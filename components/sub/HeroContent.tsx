@@ -25,7 +25,7 @@ const HeroContent = () => {
         </motion.div> 
         <motion.div
         variants={slideInFromLeft(0.5)}
-        className='flex flex-col gap-6 mt-6 lg:text-5xl font-bold text-white max-w-[600px] w-auto h-auto xs:text-xl'
+        className='flex flex-col gap-6 mt-6 lg:text-4xl xl:text-5xl font-bold text-white max-w-[600px] w-auto h-auto xs:text-xl md:text-2xl '
         >
           <span>
           From Ideas to Identity – We Help Students 
@@ -35,7 +35,7 @@ const HeroContent = () => {
         </motion.div>
         <motion.p
         variants={slideInFromLeft(0.8)}
-        className='lg:text-lg text-gray-400 my-5 max-w-[600px] xs:text-sm '
+        className='lg:text-lg text-gray-400 my-5 max-w-[600px] xs:text-sm md:text-lg xl:text-xl '
         >
           An interactive platform for our college startup club, connecting innovators, providing resources, and fostering collaboration through discussions, project showcases, and networking opportunities.
         </motion.p>
@@ -47,7 +47,7 @@ const HeroContent = () => {
       </div>
       <motion.div
       variants={slideInFromRight(0.8)}
-      className='w-full h-full flex justify-center items-center'
+      className='w-full h-full flex justify-center items-center xs:hidden sm:flex  '
       >
         <Image
         src="/mainIconsdark.svg"
