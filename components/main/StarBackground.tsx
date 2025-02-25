@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 // @ts-expect-error: This import might not be resolved correctly
 import * as random from "maath/random/dist/maath-random.esm";
+import * as THREE from "three"; // Import THREE from the three library
 
 const StarBackground: React.FC = (props) => {
   const ref = useRef<THREE.Group>(null); // Specify Three.js Group type
