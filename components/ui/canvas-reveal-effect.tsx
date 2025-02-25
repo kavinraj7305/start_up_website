@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
+import { useCallback } from "react";
+
 
 export const CanvasRevealEffect = ({
   animationSpeed = 0.4,
@@ -192,7 +194,7 @@ const ShaderMaterial = ({
   uniforms: Uniforms;
 }) => {
   const { size } = useThree();
-  const ref = useRef<THREE.Mesh>();
+  const ref = useRef<THREE.Mesh>(null);
   let lastFrameTime = 0;
 
   useFrame(({ clock }) => {
@@ -203,17 +205,17 @@ const ShaderMaterial = ({
     }
     lastFrameTime = timestamp;
 
-    const material: any = ref.current.material;
-    const timeLocation = material.uniforms.u_time;
-    timeLocation.value = timestamp;
+    const material = ref.current?.material as THREE.ShaderMaterial;
+const timeLocation = material.uniforms.u_time;
+timeLocation.value = timestamp;
   });
 
-  const getUniforms = () => {
-    const preparedUniforms: any = {};
-
+  const getUniforms = useCallback(() => {
+    const preparedUniforms: preparedUniforms = {};
+  
     for (const uniformName in uniforms) {
       const uniform: any = uniforms[uniformName];
-
+  
       switch (uniform.type) {
         case "uniform1f":
           preparedUniforms[uniformName] = { value: uniform.value, type: "1f" };
@@ -246,15 +248,14 @@ const ShaderMaterial = ({
           break;
       }
     }
-
+  
     preparedUniforms["u_time"] = { value: 0, type: "1f" };
     preparedUniforms["u_resolution"] = {
       value: new THREE.Vector2(size.width * 2, size.height * 2),
-    }; // Initialize u_resolution
+    };
     return preparedUniforms;
-  };
-
-  // Shader material
+  }, [uniforms, size.width, size.height]);
+  
   const material = useMemo(() => {
     const materialObject = new THREE.ShaderMaterial({
       vertexShader: `
@@ -277,12 +278,11 @@ const ShaderMaterial = ({
       blendSrc: THREE.SrcAlphaFactor,
       blendDst: THREE.OneFactor,
     });
-
+  
     return materialObject;
-  }, [size.width, size.height, source]);
-
+  }, [size.width, size.height, source, getUniforms]);
   return (
-    <mesh ref={ref as any}>
+    <mesh ref={ref}>
       <planeGeometry args={[2, 2]} />
       <primitive object={material} attach="material" />
     </mesh>
