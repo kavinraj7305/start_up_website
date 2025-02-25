@@ -351,7 +351,7 @@ const Encryption = () => {
 
   return (
     <div ref={scope} className="flex flex-row relative items-center justify-center min-h-screen w-full h-full ">
-      <div className="absolute w-auto h-auto top-0 z-[5]">
+      <div className="absolute w-auto h-auto top-0 z-[5] py-0">
         <motion.div
           variants={slideInFromTop}
           className="text-[40px] font-medium text-center text-gray-200"
@@ -362,7 +362,7 @@ const Encryption = () => {
         </motion.div>
       </div>
 
-      <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
+      <div className="flex flex-col items-center justify-center translate-y-[-40px] absolute z-[20] w-auto h-auto mb-0 ">
         <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
           <Image
             src="/LockTop.png"
@@ -384,7 +384,7 @@ const Encryption = () => {
           </motion.button>
         </div>
 
-        <div className="Welcome-box px-[15px] py-[4px] z-[20] brder my-[20px] border-[#7042f88b] opacity-[0.9]">
+        <div className="Welcome-box px-[15px] py-[4px] z-[20] border my-[20px] border-[#7042f88b] opacity-[0.9]">
           <h1 className="Welcome-text text-[12px]">The Thinkers, The Makers, The Doers.</h1>
         </div>
       </div>

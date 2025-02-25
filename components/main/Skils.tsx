@@ -6,7 +6,7 @@ import { CanvasRevealEffect } from "./CanvasRevealEffect";
 
 const Skills = () => {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-20 -mt-20">
       <h1 className="heading text-white  text-center font-bold text-3xl">
         Our <span className="text-purple-400">Work</span><span className="ml-0">Flow</span>
       </h1>

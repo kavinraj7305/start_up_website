@@ -203,16 +203,24 @@ const ShaderMaterial = ({
     }
     lastFrameTime = timestamp;
 
-    const material: any = ref.current.material;
+    const material = ref.current.material as THREE.ShaderMaterial;
+
     const timeLocation = material.uniforms.u_time;
     timeLocation.value = timestamp;
   });
 
   const getUniforms = () => {
-    const preparedUniforms: any = {};
+    const preparedUniforms: Record<string, { value: unknown; type: string }> = {};
+
 
     for (const uniformName in uniforms) {
-      const uniform: any = uniforms[uniformName];
+      type Uniform = {
+        value: number | number[] | number[][] | THREE.Vector2 | THREE.Vector3;
+        type: string;
+      };
+      
+      const uniform = uniforms[uniformName] as Uniform;
+      
 
       switch (uniform.type) {
         case "uniform1f":
@@ -256,30 +264,17 @@ const ShaderMaterial = ({
 
   // Shader material
   const material = useMemo(() => {
-    const materialObject = new THREE.ShaderMaterial({
-      vertexShader: `
-      precision mediump float;
-      in vec2 coordinates;
-      uniform vec2 u_resolution;
-      out vec2 fragCoord;
-      void main(){
-        float x = position.x;
-        float y = position.y;
-        gl_Position = vec4(x, y, 0.0, 1.0);
-        fragCoord = (position.xy + vec2(1.0)) * 0.5 * u_resolution;
-        fragCoord.y = u_resolution.y - fragCoord.y;
-      }
-      `,
+    return new THREE.ShaderMaterial({
+      vertexShader: `...`,
       fragmentShader: source,
-      uniforms: getUniforms(),
+      uniforms: getUniforms(), // Call the function
       glslVersion: THREE.GLSL3,
       blending: THREE.CustomBlending,
       blendSrc: THREE.SrcAlphaFactor,
       blendDst: THREE.OneFactor,
     });
-
-    return materialObject;
-  }, [size.width, size.height, source]);
+  }, [size.width, size.height, source, getUniforms]); // Add `getUniforms` as a dependency
+  
 
   return (
     <mesh ref={ref as any}>
