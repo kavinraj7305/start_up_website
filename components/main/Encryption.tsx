@@ -393,7 +393,7 @@ const Encryption = () => {
       <motion.div 
         variants={slideInFromLeft(0.8)} 
         id="first_circle" 
-        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-10" : "z-0"} ${hovered? "z-20" : "z-0" }`}
+        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-20" : "z-0"} ${hovered? "z-20" : "z-0" }`}
         onMouseEnter={()=>{hover_circle_1_enter();setIsHovered(true)}}
         onMouseLeave={()=>{hover_circle_1_leave();setIsHovered(false);generateTeamDetails_1()}}
       >
@@ -413,7 +413,7 @@ const Encryption = () => {
       <motion.div 
         variants={slideInFromLeft(0.8)} 
         id="second_circle" 
-        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-10" : "z-0"} ${hovered_1? "z-20" : "z-0" }`}
+        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-20" : "z-0"} ${hovered_1? "z-20" : "z-0" }`}
         onMouseEnter={()=>{hover_circle_2_enter();setIsHovered_1(true)}}
         onMouseLeave={()=>{hover_circle_2_leave();setIsHovered_1(false);generateTeamDetails_2()}}
       >
@@ -433,7 +433,7 @@ const Encryption = () => {
       <motion.div 
         variants={slideInFromLeft(0.8)} 
         id="third_circle" 
-        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-10" : "z-0"} ${hovered_2? "z-20" : "z-0" }`}
+        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-20" : "z-0"} ${hovered_2? "z-20" : "z-0" }`}
         onMouseEnter={()=>{hover_circle_3_enter();setIsHovered_2(true)}}
         onMouseLeave={()=>{hover_circle_3_leave();setIsHovered_2(false);generateTeamDetails_3()}}
       >
@@ -453,7 +453,7 @@ const Encryption = () => {
       <motion.div 
         variants={slideInFromLeft(0.8)} 
         id="fourth_circle" 
-        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-10" : "z-0"} ${hovered_3? "z-20" : "z-0" }`}
+        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-20" : "z-0"} ${hovered_3? "z-20" : "z-0" }`}
         onMouseEnter={()=>{hover_circle_4_enter();setIsHovered_3(true)}}
         onMouseLeave={()=>{hover_circle_4_leave();setIsHovered_3(false);generateTeamDetails_4()}}
         
@@ -474,7 +474,7 @@ const Encryption = () => {
       <motion.div 
         variants={slideInFromLeft(0.8)} 
         id="fifth_circle" 
-        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-10" : "z-0"} ${hovered_4? "z-20" : "z-0" }`}
+        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-20" : "z-0"} ${hovered_4? "z-20" : "z-0" }`}
         onMouseEnter={()=>{hover_circle_5_enter();setIsHovered_4(true)}}
         onMouseLeave={()=>{hover_circle_5_leave();setIsHovered_4(false);generateTeamDetails_5()}}
       >
@@ -494,7 +494,7 @@ const Encryption = () => {
       <motion.div 
         variants={slideInFromLeft(0.8)} 
         id="sixth_circle" 
-        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-10" : "z-0"} ${hovered_5? "z-20" : "z-0" }`}
+        className={`w-10 h-10 bg-white rounded-full ${clicked ? "z-20" : "z-0"} ${hovered_5? "z-20" : "z-0" }`}
         onMouseEnter={()=>{hover_circle_6_enter();setIsHovered_5(true)}}
         onMouseLeave={()=>{hover_circle_6_leave();setIsHovered_5(false);generateTeamDetails_6()}}
       >

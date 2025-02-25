@@ -261,19 +261,28 @@ const ShaderMaterial = ({
     }; // Initialize u_resolution
     return preparedUniforms;
   };
+  const vertexShader = `
+  varying vec2 vUv;
+  
+  void main() {
+    vUv = uv;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`;
 
   // Shader material
   const material = useMemo(() => {
     return new THREE.ShaderMaterial({
-      vertexShader: `...`,
-      fragmentShader: source,
-      uniforms: getUniforms(), // Call the function
+      vertexShader, // Use the defined vertex shader
+      fragmentShader: source, // Your existing fragment shader
+      uniforms: getUniforms(),
       glslVersion: THREE.GLSL3,
       blending: THREE.CustomBlending,
       blendSrc: THREE.SrcAlphaFactor,
       blendDst: THREE.OneFactor,
     });
-  }, [source, getUniforms]); // Add `getUniforms` as a dependency
+  }, [ source, getUniforms]);
+   // Add `getUniforms` as a dependency
   
 
   return (
