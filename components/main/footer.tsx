@@ -63,9 +63,7 @@ const footer = () => {
         transition={{duration:1,ease:"easeOut"}}
         >
         <div className='flex flex-col items-center justify-center z-[30] text-white '>
-          <div>
-          <ParallaxText baseVelocity={-5}>STARTUP</ParallaxText>
-          </div>
+          
           <div className='max-h-screen w-full mx-4 bg-white/50 z-50'>
             <div className='border divide-y '>
     
