@@ -1,5 +1,4 @@
 "use client"
-import { useRef } from 'react'
 import {
   SiGithub,
   SiLinkedin,
@@ -11,7 +10,7 @@ import {
   SiX,
   SiThreads,
 } from 'react-icons/si'
-import { motion, useAnimate, useMotionValue, useScroll, useSpring, useTransform, useVelocity, wrap, useAnimationFrame } from 'framer-motion';
+import { motion, useAnimate} from 'framer-motion';
 import React from 'react'
 
 
