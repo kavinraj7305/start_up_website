@@ -14,45 +14,6 @@ import {
 import { motion, useAnimate, useMotionValue, useScroll, useSpring, useTransform, useVelocity, wrap, useAnimationFrame } from 'framer-motion';
 import React from 'react'
 
-interface ParallaxProps {
-    children: string;
-    baseVelocity: number;
-  }
-  
-  function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
-    const baseX = useMotionValue(0);    
-    const { scrollY } = useScroll();
-    const scrollVelocity = useVelocity(scrollY);
-    const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
-    const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], { clamp: false });
-  
-    const x = useTransform(baseX, (v) => `${wrap(-50, 0, v)}%`);
-  
-    const directionFactor = useRef<number>(1);
-    useAnimationFrame((t, delta) => {
-      let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-  
-      if (velocityFactor.get() < 0) {
-        directionFactor.current = -1;
-      } else if (velocityFactor.get() > 0) {
-        directionFactor.current = 1;
-      }
-  
-      moveBy += directionFactor.current * moveBy * velocityFactor.get();
-      baseX.set(baseX.get() + moveBy);
-    });
-  
-    return (
-      <div className="overflow-hidden whitespace-nowrap flex items-center relative w-full text-4xl font-bold uppercase h-[400px] ">
-        <motion.div className="flex space-x-10" style={{ x }}>
-          {[...Array(10)].map((_, i) => (
-            <span key={i} className="px-4 bg-gradient-to-r from-purple-500 to-cyan-500">{children}</span>
-          ))}
-        </motion.div>
-      </div>
-    );
-  }
-  
 
 const footer = () => {
     return (
