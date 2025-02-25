@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['https://start-up-website-v5na.vercel.app/'], // Replace with your domain if needed
+    domains: ['start-up-website-v5na.vercel.app', 'images.unsplash.com'], // Add multiple domains if needed
   },
 };
 
