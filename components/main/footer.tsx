@@ -54,9 +54,9 @@ const footer = () => {
       )
     };
     
-    interface LinkBoxProps{
-      Icon:React.ElementType;
-      href:string;
+    interface LinkBoxProps {
+      Icon: React.ComponentType<any>;
+      href: string;
     }
     
     const NO_CLIP = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
