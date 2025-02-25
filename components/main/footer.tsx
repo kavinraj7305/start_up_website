@@ -55,7 +55,7 @@ const footer = () => {
     };
     
     interface LinkBoxProps {
-      Icon: React.ComponentType<any>;
+      Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
       href: string;
     }
     
@@ -101,31 +101,18 @@ const footer = () => {
       }
     
     
-      const getNearestSide = (e:React.MouseEvent<HTMLAnchorElement>) : keyof typeof ENTRANCE_KEYFRAMES =>{
+      const getNearestSide = (e: React.MouseEvent<HTMLAnchorElement>): "left" | "bottom" | "top" | "right" => {
         const box = e.currentTarget.getBoundingClientRect();
-    
-        const proxymityToLeft ={
-          proximity : Math.abs(box.left - e.clientX),
-          side : "left"
-        }
-        const proxymityToRight ={
-          proximity : Math.abs(box.right - e.clientX),
-          side : "right"
-        }
-        const proxymityToBottom ={
-          proximity : Math.abs(box.bottom - e.clientY),
-          side : "bottom"
-        }
-        const proxymityToTop ={
-          proximity : Math.abs(box.top - e.clientY),
-          side : "top"
-        }
-        
-        const sortedProxymities = [proxymityToLeft,proxymityToRight,proxymityToBottom,proxymityToTop].sort((a,b)=>a.proximity - b.proximity);
-    
-        return sortedProxymities[0].side as keyof typeof ENTRANCE_KEYFRAMES;
-    
-      }
+      
+        const proximities = [
+          { proximity: Math.abs(box.left - e.clientX), side: "left" as const },
+          { proximity: Math.abs(box.right - e.clientX), side: "right" as const },
+          { proximity: Math.abs(box.bottom - e.clientY), side: "bottom" as const },
+          { proximity: Math.abs(box.top - e.clientY), side: "top" as const },
+        ];
+      
+        return proximities.sort((a, b) => a.proximity - b.proximity)[0].side;
+      };
     
     
     

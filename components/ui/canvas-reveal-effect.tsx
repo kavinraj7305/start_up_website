@@ -281,7 +281,7 @@ timeLocation.value = timestamp;
     });
   
     return materialObject;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [source, getUniforms]); // Keep size.width and size.height if they are necessary
   return (
     <mesh ref={ref}>
