@@ -210,6 +210,13 @@ const timeLocation = material.uniforms.u_time;
 timeLocation.value = timestamp;
   });
 
+  type UniformValue = number[] | number[][] | number;
+
+type Uniform = {
+  value: UniformValue;
+  type: string;
+};
+
   const getUniforms = useCallback(() => {
     const preparedUniforms: preparedUniforms = {};
   
@@ -255,7 +262,7 @@ timeLocation.value = timestamp;
     };
     return preparedUniforms;
   }, [uniforms, size.width, size.height]);
-  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const material = useMemo(() => {
     const materialObject = new THREE.ShaderMaterial({
       vertexShader: `
