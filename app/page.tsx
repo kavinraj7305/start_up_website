@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex flex-col gap-1
       ">
         <Hero/>
-        <div className="xs:hidden md:block">
+        <div className="">
         <Encryption/>
         <Skills/>
         </div>
