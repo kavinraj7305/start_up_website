@@ -1,8 +1,9 @@
 import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/hero"
 import Projects from "@/components/main/Projects";
-import Skills from "@/components/main/Skils";
 import Footer from "@/components/main/footer";
+import Skills from "@/components/main/Skils";
+
 
 export default function Home() {
   return (
@@ -10,9 +11,9 @@ export default function Home() {
       <div className="flex flex-col gap-1
       ">
         <Hero/>
-        <Skills/>
         <div className="xs:hidden md:block">
         <Encryption/>
+        <Skills/>
         </div>
         <Projects/>
         <Footer/>

@@ -50,7 +50,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* chatbot*/ }
-        <div className="">
+        <div className="flex">
   <Drawer.Root direction="right">
     <Drawer.Trigger className="relative flex h-10 flex-shrink-0 items-center justify-between gap-2 overflow-hidden rounded-full bg-white/20 backdrop-blur-xl text-white px-8 font-medium shadow-sm transition-all z-30 text-xl ">
       ChatBot
