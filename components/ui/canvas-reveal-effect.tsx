@@ -210,18 +210,12 @@ const timeLocation = material.uniforms.u_time;
 timeLocation.value = timestamp;
   });
 
-  type UniformValue = number[] | number[][] | number;
-
-type Uniform = {
-  value: UniformValue;
-  type: string;
-};
 
   const getUniforms = useCallback(() => {
     const preparedUniforms: preparedUniforms = {};
   
     for (const uniformName in uniforms) {
-      const uniform: any = uniforms[uniformName];
+      const uniform = uniforms[uniformName];
   
       switch (uniform.type) {
         case "uniform1f":
@@ -262,7 +256,7 @@ type Uniform = {
     };
     return preparedUniforms;
   }, [uniforms, size.width, size.height]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   const material = useMemo(() => {
     const materialObject = new THREE.ShaderMaterial({
       vertexShader: `
@@ -287,7 +281,8 @@ type Uniform = {
     });
   
     return materialObject;
-  }, [size.width, size.height, source, getUniforms]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [source, getUniforms]); // Keep size.width and size.height if they are necessary
   return (
     <mesh ref={ref}>
       <planeGeometry args={[2, 2]} />
