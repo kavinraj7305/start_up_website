@@ -212,7 +212,8 @@ timeLocation.value = timestamp;
 
 
   const getUniforms = useCallback(() => {
-    const preparedUniforms: preparedUniforms = {};
+    const preparedUniforms: typeof uniforms = {};
+
   
     for (const uniformName in uniforms) {
       const uniform = uniforms[uniformName];
