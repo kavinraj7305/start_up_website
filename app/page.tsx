@@ -11,7 +11,9 @@ export default function Home() {
       ">
         <Hero/>
         <Skills/>
+        <div className="xs:hidden md:block">
         <Encryption/>
+        </div>
         <Projects/>
         <Footer/>
       </div>
