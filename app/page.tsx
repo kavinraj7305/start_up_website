@@ -4,6 +4,8 @@ import Projects from "@/components/main/Projects";
 import Footer from "@/components/main/footer";
 import Skills from "@/components/main/Skils";
 import HeroScrollDemo from "@/components/main/scrollBorad";
+import TextRevealCardPreview from "@/components/main/transistionCard";
+
 
 
 
@@ -14,6 +16,7 @@ export default function Home() {
       ">
         <Hero/>
         <HeroScrollDemo/>
+        <TextRevealCardPreview/>
         <Skills/>
         <Projects/>
         <Footer/>
