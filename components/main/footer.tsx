@@ -10,16 +10,29 @@ import {
   SiX,
   SiThreads,
 } from 'react-icons/si'
-import { motion, useAnimate} from 'framer-motion';
-import React from 'react'
+import { motion, useAnimate, useAnimation, useInView} from 'framer-motion';
+import React, { useEffect, useRef } from 'react'
 
 
 const footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.005 }); // ✅ Triggers when 0.5% is visible
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start({y:"0vh"});
+    } else {
+      mainControls.start({y:"-100vh"});
+    }
+  }, [isInView, mainControls]); // ✅ Added `mainControls` to dependencies
+
     return (
         <motion.div
+        ref={ref}
         className='h-[calc(100vh-6rem)] w-full'
         initial={{y:"-100vh"}}
-        animate={{y:"0vh"}}
+        animate={mainControls}
         transition={{duration:1,ease:"easeOut"}}
         >
         <div className='flex flex-col items-center justify-center z-[30] text-white '>
@@ -113,15 +126,8 @@ const footer = () => {
       
         return proximities.sort((a, b) => a.proximity - b.proximity)[0].side;
       };
-    
-    
-    
-    
-    
       return(
-    
         <a
-    
         onMouseEnter={(e)=>{
           handleMouseEnter(e);
         }}
@@ -129,11 +135,6 @@ const footer = () => {
         onMouseLeave={(e)=>{
           handleMouseLeave(e);
         }} 
-    
-    
-    
-    
-    
         href={href}
         className='relative grid h-20 w-full place-content-center sm:h-28 md:h-36'
         >
