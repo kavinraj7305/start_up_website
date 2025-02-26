@@ -14,7 +14,7 @@ import { motion, useAnimate, useAnimation, useInView} from 'framer-motion';
 import React, { useEffect, useRef } from 'react'
 
 
-const footer = () => {
+const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.005 }); // ✅ Triggers when 0.5% is visible
   const mainControls = useAnimation();
@@ -154,4 +154,4 @@ const footer = () => {
       )
 }
 
-export default footer
+export default Footer
