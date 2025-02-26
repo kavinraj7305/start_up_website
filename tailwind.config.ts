@@ -58,6 +58,7 @@ export default {
   		},
 		fontSize:{
 			'xs':'0.2rem',
+			'3xs':'0.5rem',
 			'2xs':'0.8rem'
 		},
 		screens:{
