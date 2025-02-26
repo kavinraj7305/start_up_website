@@ -10,8 +10,7 @@ import {
   SiX,
   SiThreads,
 } from 'react-icons/si'
-import { motion, useAnimate, useAnimation, useInView} from 'framer-motion';
-import React, { useEffect, useRef } from 'react'
+import { motion, useAnimate, } from 'framer-motion';
 
 
 const Footer = () => {
