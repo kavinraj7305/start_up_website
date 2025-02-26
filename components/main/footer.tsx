@@ -15,22 +15,11 @@ import React, { useEffect, useRef } from 'react'
 
 
 const Footer = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.005 }); // ✅ Triggers when 0.5% is visible
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start({y:"0vh"});
-    } 
-  }, [isInView, mainControls]); // ✅ Added `mainControls` to dependencies
-
     return (
         <motion.div
-        ref={ref}
-        className='h-[calc(70vh-6rem)] w-full'
+        className='h-[calc(70vh-6rem)] sm:h-[calc(70vh-6rem)] w-full'
         initial={{y:"100vh"}}
-        animate={mainControls}
+        animate={{y:0}}
         transition={{duration:1,ease:"easeOut"}}
         >
         <div className='flex flex-col items-center justify-center z-[30] text-white '>

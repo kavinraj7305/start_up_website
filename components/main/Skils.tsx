@@ -39,9 +39,8 @@ export default function AnimatedTestimonialsDemo() {
     },
   ];
   return (
-    <div>
-      
+
     <AnimatedTestimonials testimonials={testimonials} />
-    </div>
+
 );
 }
