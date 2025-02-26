@@ -5,6 +5,7 @@ import Footer from "@/components/main/footer";
 import Skills from "@/components/main/Skils";
 import HeroScrollDemo from "@/components/main/scrollBorad";
 import TextRevealCardPreview from "@/components/main/transistionCard";
+import CarouselDemo from "@/components/main/agenda";
 
 
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero/>
         <HeroScrollDemo/>
         <TextRevealCardPreview/>
+        <CarouselDemo/>
         <Skills/>
         <Projects/>
         <Footer/>

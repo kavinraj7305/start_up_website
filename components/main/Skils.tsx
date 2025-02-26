@@ -39,7 +39,7 @@ export default function AnimatedTestimonialsDemo() {
     },
   ];
   return (
-    <div className="mt-0 z-50 -translate-y-72 md:-translate-y-96">
+    <div className="mt-0 z-50 -translate-y-56 md:-translate-y-3/4 ">
     <AnimatedTestimonials testimonials={testimonials} />
     </div>
 );
