@@ -38,5 +38,10 @@ export default function AnimatedTestimonialsDemo() {
       src: "https://images.unsplash.com/photo-1736344398782-0107cd2ca611?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzOHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
+  return (
+    <div>
+      
+    <AnimatedTestimonials testimonials={testimonials} />
+    </div>
+);
 }
