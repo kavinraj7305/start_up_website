@@ -39,8 +39,8 @@ export default function AnimatedTestimonialsDemo() {
     },
   ];
   return (
-
+    <div className="mt-0 z-50">
     <AnimatedTestimonials testimonials={testimonials} />
-
+    </div>
 );
 }
