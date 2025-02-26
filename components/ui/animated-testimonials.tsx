@@ -20,7 +20,7 @@ export const AnimatedTestimonials = ({
 }) => {
   const [active, setActive] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount:1 }); // Detect when 50% of the section is in view
+  const isInView = useInView(ref, { once: false, amount:0.5 }); // Detect when 50% of the section is in view
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
