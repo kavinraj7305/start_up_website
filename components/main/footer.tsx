@@ -22,16 +22,14 @@ const Footer = () => {
   useEffect(() => {
     if (isInView) {
       mainControls.start({y:"0vh"});
-    } else {
-      mainControls.start({y:"-100vh"});
-    }
+    } 
   }, [isInView, mainControls]); // ✅ Added `mainControls` to dependencies
 
     return (
         <motion.div
         ref={ref}
         className='h-[calc(100vh-6rem)] w-full'
-        initial={{y:"-100vh"}}
+        
         animate={mainControls}
         transition={{duration:1,ease:"easeOut"}}
         >
