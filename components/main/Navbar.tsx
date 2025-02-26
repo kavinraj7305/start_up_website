@@ -41,8 +41,8 @@ const Navbar = () => {
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 lg:mr-[20px]">
             <a href="#about-us" className="cursor-pointer sm:text-sm xl:text-xl lg:text-xl">
               About Us            </a>
-            <a href="#skills" className="cursor-pointer xl:text-2xl sm:text-sm lg:text-2xl">
-              Skills
+            <a href="#GamePlan" className="cursor-pointer xl:text-2xl sm:text-sm lg:text-2xl">
+              Game Plan
             </a>
             <a href="#Projects" className="cursor-pointer xl:text-xl sm:text-sm lg:text-xl">
               Projects
