@@ -44,9 +44,9 @@ const Navbar = () => {
             <a href="#GamePlan" className="cursor-pointer xl:text-2xl sm:text-sm lg:text-2xl">
               Game Plan
             </a>
-            <a href="#Projects" className="cursor-pointer xl:text-xl sm:text-sm lg:text-xl">
+            {/*<a href="#Projects" className="cursor-pointer xl:text-xl sm:text-sm lg:text-xl">
               Projects
-            </a>
+            </a>*/}
           </div>
         </div>
         {/* chatbot*/ }

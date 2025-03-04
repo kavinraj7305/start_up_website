@@ -20,7 +20,9 @@ export default function Home() {
         <TextRevealCardPreview/>
         <CarouselDemo/>
         <Skills/>
+        <div className="xs:hidden ">
         <Projects/>
+        </div>
         <Footer/>
       </div>
    </main>

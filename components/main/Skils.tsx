@@ -21,7 +21,7 @@ export default function AnimatedTestimonialsDemo() {
         `"The ones who are crazy enough to think they can change the world are the ones who do. Every great innovation, every revolutionary company, and every disruptive technology started with someone who refused to accept the status quo."`,
       name: "Mr.Manimaran B",
       designation: "Head IIC",
-      src: "https://images.unsplash.com/photo-1740219148636-824ab17bdd57?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
+      src: "/mani_sir.jpg",
     },
     {
       quote:
@@ -39,7 +39,7 @@ export default function AnimatedTestimonialsDemo() {
     },
   ];
   return (
-    <div className="mt-0 z-50 -translate-y-56 md:-translate-y-3/4 ">
+    <div className="mt-0 z-30 -translate-y-56 md:-translate-y-3/4 ">
     <AnimatedTestimonials testimonials={testimonials} />
     </div>
 );

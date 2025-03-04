@@ -14,7 +14,7 @@ export default function TextRevealCardPreview() {
   return (
     <div
       ref={ref}
-      className="flex items-center justify-center bg-transparent h-[40rem] rounded-2xl w-full z-50 relative overflow-hidden -translate-y-96 xs:hidden md:flex"
+      className="flex items-center justify-center bg-transparent h-[40rem] rounded-2xl w-full z-30 relative overflow-hidden -translate-y-96 xs:hidden md:flex"
     >
       <motion.div
         initial={{ y: "100%", opacity: 0 }}

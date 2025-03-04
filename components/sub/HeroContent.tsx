@@ -33,7 +33,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-6 xs:h-10 xs:w-24 xs:mr-0" />
           <h1 className="welcome-text text-[13px] xs:text-[20px] text-white pr-3">
-            RIT STARTUP
+            RIT INNOVATION
           </h1>
         </motion.div>
         <motion.div
