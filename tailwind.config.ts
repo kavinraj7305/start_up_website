@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+
+
+
 export default {
     darkMode: ["class"],
     content: [
@@ -9,6 +12,9 @@ export default {
   ],
   theme: {
   	extend: {
+		animation:{
+			"meteor-effect": "meteor 5s linear infinite",
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -63,8 +69,20 @@ export default {
 		},
 		screens:{
 			'xs':'200px'
+		},
+		keyframes:{
+			meteor: {
+				"0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+				"70%": { opacity: "1" },
+				"100%": {
+				  transform: "rotate(215deg) translateX(-500px)",
+				  opacity: "0",
+		},
+			}
 		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+	
+  ],
 } satisfies Config;
