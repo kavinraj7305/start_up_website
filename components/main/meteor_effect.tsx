@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { Meteors } from "../ui/meteors";
-import { useAnimate } from "framer-motion"; 
+
 
 interface MeteorsDemoProps{
     title:string;
